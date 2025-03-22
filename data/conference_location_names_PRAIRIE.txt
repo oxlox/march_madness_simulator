@@ -1,0 +1,44 @@
+Montana
+North Dakota
+South Dakota
+Wyoming
+Oklahoma
+Kansas
+Iowa
+Nebraska
+Minnesota
+Illinois
+Indiana
+Ohio
+West Virginia
+Montana State
+North Dakota State
+South Dakota State
+Wyoming State
+Oklahoma State
+Kansas State
+Iowa State
+Nebraska State
+Minnesota State
+Illinois State
+Indiana State
+Ohio State
+West Virginia State
+Alberta
+Calgary
+Edmonton
+Saskatchewan
+Regina
+Saskatoon
+Winnipeg
+Manitoba
+Billings
+Bozeman
+Minot
+Chicago
+St Paul
+Minneapolis
+Champaign
+Cleveland
+Thunder Bay
+Gary

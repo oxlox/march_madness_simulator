@@ -5,4 +5,4 @@ class Team:
         self.seed = seed
 
     def __str__(self):
-        return f"{self.location} {self.name}"
+        return f"{self.seed} - {self.location} {self.name}"

@@ -3,8 +3,7 @@ from classes.bracket import Bracket
 
 def main():
     bracket = Bracket()
-    for team in bracket.teams:
-        print(team)
+    print(f"Done Creating bracket")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,32 @@
+California
+Oregon
+Washington
+Idaho
+Utah
+Nevada
+Arizona
+New Mexico
+Colorado
+Hawaii
+Alaska
+California State
+Oregon State
+Washington State
+Idaho State
+Utah State
+Nevada State
+Arizona State
+New Mexico State
+Colorado State
+British Columbia
+Victoria
+Kelowna
+Los Angeles
+San Diego
+Oakland
+Portland
+Seattle
+Spokane
+Denver
+Phoenix
+Las Vegas
