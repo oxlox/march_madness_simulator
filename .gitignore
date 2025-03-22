@@ -1,1 +1,3 @@
 .python-version
+.coverage
+__pycache__/

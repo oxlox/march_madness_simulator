@@ -1,5 +1,5 @@
 import random
-from definitions import ROOT_PATH
+from definitions import ROOT_DIR
 
 def initialize_teams():
     # Create all teams at once, so that school locations don't get re-used.
@@ -7,10 +7,10 @@ def initialize_teams():
     teams_in_tournament = []
     available_schools = []
     available_names = []
-    with open(f"{ROOT_PATH}/data/school_location_names.txt", "r") as team_location_file:
+    with open(f"{ROOT_DIR}/data/school_location_names.txt", "r") as team_location_file:
         for line in team_location_file:
             available_schools.append(line)
-    with open(f"{ROOT_PATH}/data/school_team_names.txt", "r") as team_name_file:
+    with open(f"{ROOT_DIR}/data/school_team_names.txt", "r") as team_name_file:
         for line in team_name_file:
             available_names.append(line)
 
@@ -20,6 +20,7 @@ def initialize_teams():
         team_name = available_names[random.randint(0, len(available_names)-1)]
         new_team = Team(location, team_name)
         teams_in_tournament.append(new_team)
+    return teams_in_tournament
 
 
 
