@@ -1,12 +1,14 @@
+import logging
 import random
 from classes import team
 from definitions import ROOT_DIR
+
+logger = logging.getLogger(__name__)
 
 
 class Bracket:
     def __init__(self):
         self.teams = self.initialize_teams()
-
 
     def initialize_teams(self):
         # Create all teams at once, so that school locations don't get re-used.
@@ -14,7 +16,9 @@ class Bracket:
         teams_in_tournament = []
         available_schools = []
         available_names = []
-        with open(f"{ROOT_DIR}/data/school_location_names.txt", "r") as team_location_file:
+        with open(
+            f"{ROOT_DIR}/data/school_location_names.txt", "r"
+        ) as team_location_file:
             for line in team_location_file:
                 available_schools.append(line)
         with open(f"{ROOT_DIR}/data/school_team_names.txt", "r") as team_name_file:
