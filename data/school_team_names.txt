@@ -9,7 +9,7 @@ Yorkies
 Inus
 Terriers
 Newfs
-Yeit
+Yeti
 Storm
 Squalls
 Tigers
@@ -98,3 +98,46 @@ Beach Bums
 Vikings
 Dolphins
 Berserkers
+Lakers
+Ships
+Clippers
+Sailboats
+Yachts
+Sun
+Heat
+Red Tide
+Sky
+Stallions
+Packmules
+Swim Team
+Jazz
+Timberwolves
+Rockets
+Mavericks
+Spurs
+Pelicans
+Hornets
+Magic
+Hawks
+Falcons
+Eagles
+Geese
+Gulls
+Swarm
+Bulls
+Bucks
+Steer
+Stags
+Elk
+Stampeders
+Empire
+Pacers
+Avalanche
+Flames
+Thunder
+Romans
+Huns
+Mongols
+Centerions
+Nets
+Red Claws
