@@ -96,19 +96,50 @@ South California State
 Upstate New York State
 British Columbia
 Victoria
-Simon Fraser
 Alberta
 Calgary
+Edmonton
 Saskatchewan
 Regina
+Saskatoon
 Winnipeg
 Manitoba
 Ontario
 Toronto
-Guelph
-Western
-McGill
-Dalhousie
+Ottawa
+Halifax
+Sydney
+Fredericton
+Moncton
+Montreal
+Quebec
+Kitchener-Waterloo
 New Brunswick
-Memorial University of Newfoundland
-St. Mary's
+Newfoundland
+Los Angeles
+San Diego
+Oakland
+Portland
+Seattle
+Spokane
+Billings
+Bozeman
+Minot
+Chicago
+St Paul
+Minneapolis
+Champaign
+Cleveland
+Charlotte
+Denver
+Phoenix
+Las Vegas
+Dallas
+Houston
+San Antonio
+Austin
+El Paso
+Lexington
+Gary
+Thunder Bay
+Sudbury
