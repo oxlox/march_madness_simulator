@@ -1,10 +1,10 @@
-from classes import team
+from classes.bracket import Bracket
 
 
 def main():
-    teams = team.initialize_teams()
-    for new_team in teams:
-        print(new_team)
+    bracket = Bracket()
+    for team in bracket.teams:
+        print(team)
 
 
 if __name__ == "__main__":
