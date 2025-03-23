@@ -12,3 +12,16 @@ class Bracket:
             conferences.append(new_conference)
 
         return conferences
+
+    def build_matchups(self):
+        for conference in self.conferences:
+            conference.build_conference_tree()
+
+    def simulate_conferences(self):
+        for conference in self.conferences:
+            conference.simulate_conference()
+
+    def print_bracket(self):
+        for conference in self.conferences:
+            print(f"=== {conference.name} ===")
+            conference.print_matchup_tree()

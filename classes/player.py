@@ -31,6 +31,6 @@ class Player:
 
     def generate_year(self):
         return random.randint(1, 5)
-    
+
     def __str__(self):
         return f"{self.first_name} {self.last_name}"

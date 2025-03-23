@@ -23,3 +23,6 @@ class Matchup:
             self.winner = self.team2
             self.score_team2 = random.randint(45, 100)
             self.score_team1 = random.randint(40, self.score_team2)
+
+    def __str__(self):
+        return f"{self.team1}: {self.score_team1} - {self.team2}: {self.score_team2}"

@@ -1,7 +1,9 @@
 import random
-from classes import team
+from classes.team import Team
+from classes.matchup import Matchup
 from definitions import ROOT_DIR
 from enum import Enum
+from math import floor
 
 
 class ConferenceName(Enum):
@@ -16,6 +18,7 @@ class Conference:
         self.conference_id = conference_name.value
         self.name = conference_name.name
         self.teams = self.initialize_teams()
+        self.matchup_tree = []
 
     def print_teams(self):
         print(f"=== {self.name} ===")
@@ -43,9 +46,53 @@ class Conference:
             location = str.strip(location)
             team_name = available_names[random.randint(0, len(available_names) - 1)]
             team_name = str.strip(team_name)
-            new_team = team.Team(
-                location, team_name, i + 1, (i + 1) * self.conference_id
-            )
+            new_team = Team(location, team_name, i + 1, (i + 1) * self.conference_id)
             teams_in_conference.append(new_team)
 
         return teams_in_conference
+
+    def build_conference_tree(self):
+        # first, create the first round matchups
+        for i in range(0, floor(len(self.teams) / 2)):
+            new_matchup = Matchup(self.teams[i], self.teams[len(self.teams) - (i + 1)])
+            new_matchup.simulate_game()
+            self.matchup_tree.append(new_matchup)
+
+        for i in range(0, 8, 2):
+            new_matchup = Matchup(
+                self.matchup_tree[i].winner,
+                self.matchup_tree[len(self.matchup_tree) - (i + 1)].winner,
+            )
+            new_matchup.simulate_game()
+            self.matchup_tree.append(new_matchup)
+
+        for i in range(8, len(self.matchup_tree) - 1, 2):
+            new_matchup = Matchup(
+                self.matchup_tree[i].winner,
+                self.matchup_tree[len(self.matchup_tree) - (i + 1)].winner,
+            )
+            new_matchup.simulate_game()
+            self.matchup_tree.append(new_matchup)
+
+        new_matchup = Matchup(
+            self.matchup_tree[-2].winner, self.matchup_tree[-1].winner
+        )
+        new_matchup.simulate_game()
+        self.matchup_tree.append(new_matchup)
+
+    def simulate_conference(self):
+        self.print_matchup_tree()
+        for matchup in self.matchup_tree:
+            matchup.simulate_game()
+
+    def print_matchup_tree(self):
+        for matchup in self.matchup_tree:
+            if self.matchup_tree.index(matchup) == 8:
+                print("Round of 32")
+            elif self.matchup_tree.index(matchup) == 12:
+                print("Sweet 16")
+            elif self.matchup_tree.index(matchup) == 14:
+                print("Round of 8")
+            elif self.matchup_tree.index(matchup) == 15:
+                print("Final 4")
+            print(matchup)
