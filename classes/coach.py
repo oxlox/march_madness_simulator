@@ -16,4 +16,8 @@ class Coach:
                     return str.strip(line)
 
     def generate_last_name(self):
-        return ""
+        with open(f"{ROOT_DIR}/data/surnames.txt", "r") as name_file:
+            random_int = random.randint(0, 1001)
+            for i, line in enumerate(name_file):
+                if i == random_int:
+                    return str.strip(line)
