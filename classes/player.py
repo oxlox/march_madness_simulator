@@ -1,6 +1,7 @@
 import random
+from definitions import ROOT_DIR
 
-positions = set(["PG", "PG/SG", "SG", "SG/SF", "SG", "SG/PF", "PF", "PF/C", "C"])
+positions = ["PG", "PG/SG", "SG", "SG/SF", "SG", "SG/PF", "PF", "PF/C", "C"]
 
 
 class Player:
@@ -12,7 +13,11 @@ class Player:
         self.team_id = team_id
 
     def generate_first_name(self):
-        return ""
+        with open(f"{ROOT_DIR}/data/male_first_names.txt", "r") as name_file:
+            random_int = random.randint(0, 502)
+            for i, line in enumerate(name_file):
+                if i == random_int:
+                    return str.strip(line)
 
     def generate_last_name(self):
         return ""
