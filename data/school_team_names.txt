@@ -3,7 +3,7 @@ Dogfarts
 Children
 Dogs
 Dogz
-Dogzzz
+Dawgs
 Bulldogs
 Yorkies
 Inus
@@ -45,8 +45,6 @@ Factorymen
 Volunteers
 Tourists
 Busboys
-Mormons
-Stormin' Mormons
 Bellends
 Dickheads
 Punks
@@ -146,5 +144,9 @@ Plumbers
 Carpenters
 Cossacks
 Jayhawks
-Blue Jayhawks
 Blues
+Summoners
+Warlocks
+Pickles
+Mystics
+Seers

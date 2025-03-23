@@ -48,3 +48,28 @@ class Bracket:
         finals = Matchup(semifinal_1.winner, semifinal_2.winner)
         finals.simulate_game()
         self.matchup_tree.append(finals)
+
+    def get_round_1_matchups(self):
+        matchups = {}
+        for conference in self.conferences:
+            matchups[conference.name] = conference.matchups[0:8]
+        return matchups
+    
+    def get_round_2_matchups(self):
+        matchups = {}
+        for conference in self.conferences:
+            matchups[conference.name] = conference.matchups[8:12]
+        return matchups
+    
+    def get_round_3_matchups(self):
+        matchups = {}
+        for conference in self.conferences:
+            matchups[conference.name] = conference.matchups[12:14]
+        return matchups
+    
+    def get_round_4_matchups(self):
+        matchups = {}
+        for conference in self.conferences:
+            matchups[conference.name] = conference.matchups[14]
+        return matchups
+    
