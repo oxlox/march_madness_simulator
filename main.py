@@ -3,7 +3,9 @@ from classes.bracket import Bracket
 
 def main():
     bracket = Bracket()
-    print("Done Creating bracket")
+    for conference in bracket.conferences:
+        for team in conference.teams:
+            print(team.coach)
 
 
 if __name__ == "__main__":

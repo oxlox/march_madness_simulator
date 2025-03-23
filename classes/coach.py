@@ -21,3 +21,6 @@ class Coach:
             for i, line in enumerate(name_file):
                 if i == random_int:
                     return str.strip(line)
+
+    def __str__(self):
+        return f"{self.first_name} {self.last_name}"
