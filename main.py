@@ -4,7 +4,7 @@ from classes.bracket import Bracket
 def main():
     bracket = Bracket()
     bracket.build_matchups()
-    bracket.simulate_conferences()
+    bracket.simulate_bracket()
     bracket.print_bracket()
 
 

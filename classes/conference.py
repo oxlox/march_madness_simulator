@@ -81,7 +81,6 @@ class Conference:
         self.matchup_tree.append(new_matchup)
 
     def simulate_conference(self):
-        self.print_matchup_tree()
         for matchup in self.matchup_tree:
             matchup.simulate_game()
 
