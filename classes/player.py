@@ -1,7 +1,7 @@
 import random
 from definitions import ROOT_DIR
 
-positions = ["PG", "PG/SG", "SG", "SG/SF", "SG", "SG/PF", "PF", "PF/C", "C"]
+positions = ["PG", "SG", "SF", "PF", "C"]
 
 
 class Player:
@@ -11,6 +11,7 @@ class Player:
         self.position = self.generate_position()
         self.year = self.generate_year()
         self.team_id = team_id
+        self.starter = False
 
     def generate_first_name(self):
         with open(f"{ROOT_DIR}/data/male_first_names.txt", "r") as name_file:
@@ -31,6 +32,9 @@ class Player:
 
     def generate_year(self):
         return random.randint(1, 5)
+
+    def set_starter(self):
+        self.starter = True
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"

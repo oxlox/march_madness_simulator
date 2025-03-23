@@ -47,6 +47,7 @@ class Conference:
             team_name = available_names[random.randint(0, len(available_names) - 1)]
             team_name = str.strip(team_name)
             new_team = Team(location, team_name, i + 1, (i + 1) * self.conference_id)
+            new_team.set_starters()
             teams_in_conference.append(new_team)
 
         return teams_in_conference

@@ -54,22 +54,21 @@ class Bracket:
         for conference in self.conferences:
             matchups[conference.name] = conference.matchups[0:8]
         return matchups
-    
+
     def get_round_2_matchups(self):
         matchups = {}
         for conference in self.conferences:
             matchups[conference.name] = conference.matchups[8:12]
         return matchups
-    
+
     def get_round_3_matchups(self):
         matchups = {}
         for conference in self.conferences:
             matchups[conference.name] = conference.matchups[12:14]
         return matchups
-    
+
     def get_round_4_matchups(self):
         matchups = {}
         for conference in self.conferences:
             matchups[conference.name] = conference.matchups[14]
         return matchups
-    

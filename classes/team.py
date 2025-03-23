@@ -10,6 +10,7 @@ class Team:
         self.seed = seed
         self.players = self.generate_players()
         self.coach = self.generate_coach()
+        self.starters = []
 
     def __str__(self):
         return f"{self.seed} - {self.location} {self.name}"
@@ -24,3 +25,19 @@ class Team:
     def generate_coach(self):
         new_coach = Coach(self.team_id)
         return new_coach
+
+    def set_starters(self):
+        starter_positions_filled = []
+        for player in self.players:
+            if player.position not in starter_positions_filled:
+                player.set_starter()
+                starter_positions_filled.append(player.position)
+                self.starters.append(player)
+
+            if len(starter_positions_filled) == 5:
+                break
+        while len(starter_positions_filled) < 5:
+            for player in self.players:
+                if player not in self.starters:
+                    starter_positions_filled.append(player.position)
+                    self.starters.append(player)
