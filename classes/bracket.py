@@ -1,4 +1,3 @@
-import random
 from classes.conference import Conference, ConferenceName
 
 

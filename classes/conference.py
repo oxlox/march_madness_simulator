@@ -18,8 +18,8 @@ class Conference:
 
     def print_teams(self):
         print(f"=== {self.name} ===")
-        for team in self.teams:
-            print(f"{team}")
+        for conference_team in self.teams:
+            print(f"{conference_team}")
 
     def initialize_teams(self):
         # Create all teams at once, so that school locations don't get re-used.
@@ -42,7 +42,7 @@ class Conference:
             location = str.strip(location)
             team_name = available_names[random.randint(0, len(available_names) - 1)]
             team_name = str.strip(team_name)
-            new_team = team.Team(location, team_name, i+1)
+            new_team = team.Team(location, team_name, i + 1)
             teams_in_conference.append(new_team)
 
         return teams_in_conference
