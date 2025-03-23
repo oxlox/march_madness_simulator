@@ -13,6 +13,7 @@ class ConferenceName(Enum):
 
 class Conference:
     def __init__(self, conference_name):
+        self.conference_id = conference_name.value
         self.name = conference_name.name
         self.teams = self.initialize_teams()
 
@@ -42,7 +43,9 @@ class Conference:
             location = str.strip(location)
             team_name = available_names[random.randint(0, len(available_names) - 1)]
             team_name = str.strip(team_name)
-            new_team = team.Team(location, team_name, i + 1)
+            new_team = team.Team(
+                location, team_name, i + 1, (i + 1) * self.conference_id
+            )
             teams_in_conference.append(new_team)
 
         return teams_in_conference
