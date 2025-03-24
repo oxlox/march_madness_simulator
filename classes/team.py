@@ -17,7 +17,7 @@ class Team:
 
     def generate_players(self):
         players = []
-        for i in range(0, 15):
+        for i in range(0, 12):
             new_player = Player(self.team_id)
             players.append(new_player)
         return players
