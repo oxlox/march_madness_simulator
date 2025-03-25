@@ -72,3 +72,9 @@ class Bracket:
         for conference in self.conferences:
             matchups[conference.name] = conference.matchup_tree[14]
         return matchups
+
+    def get_round_5_matchups(self):
+        return [self.matchup_tree[-3], self.matchup_tree[-2]]
+
+    def get_round_6_matchups(self):
+        return self.matchup_tree[-1]

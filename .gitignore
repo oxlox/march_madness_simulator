@@ -1,3 +1,4 @@
 .python-version
 .coverage
 __pycache__/
+save_data/player_bracket.csv
