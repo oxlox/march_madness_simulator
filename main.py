@@ -2,11 +2,14 @@ from classes.bracket import Bracket
 
 
 def main():
-    bracket = Bracket()
-    bracket.build_matchups()
-    bracket.simulate_bracket()
-    bracket.print_bracket()
+    simulate_tournament()
 
 
 if __name__ == "__main__":
     main()
+
+
+def simulate_tournament():
+    bracket = Bracket()
+    bracket.build_matchups()
+    bracket.simulate_bracket()

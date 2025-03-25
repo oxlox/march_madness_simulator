@@ -1,6 +1,7 @@
 from classes.matchup import Matchup
 from classes.team import Team
 
+
 def test_matchup_simulation_score():
     team1 = Team("location", "test", 1, 1)
     team2 = Team("Otherloc", "test2", 2, 2)
