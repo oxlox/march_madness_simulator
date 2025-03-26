@@ -68,9 +68,9 @@ class Bracket:
         return matchups
 
     def get_round_4_matchups(self):
-        matchups = {}
+        matchups = []
         for conference in self.conferences:
-            matchups[conference.name] = conference.matchup_tree[14]
+            matchups.append(conference.matchup_tree[14])
         return matchups
 
     def get_round_5_matchups(self):

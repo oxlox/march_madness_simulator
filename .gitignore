@@ -2,3 +2,4 @@
 .coverage
 __pycache__/
 player_bracket.csv
+player_bracket.json
