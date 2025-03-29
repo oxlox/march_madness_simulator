@@ -67,19 +67,22 @@ class User:
                         else:
                             output("Having trouble? Try just typing the school name.")
             output("SWEET 16")
-            round_3_matchups = bracket.get_round_3_matchups()
-            for conference, matchups in round_3_matchups.items():
-                output(conference)
-                for matchup in matchups:
+            for conference_name, matchups in predictions["round_2"].items():
+                conference = bracket.get_conference(conference_name)
+                output(conference.name)
+                for i in range(0, len(matchups), 2):
+                    team1 = conference.get_team(matchups[i])
+                    team2 = conference.get_team(matchups[i+1])
+                    matchup = Matchup(team1, team2)
                     input_accepted = False
                     while not input_accepted:
                         output(f"{matchup.pre_game_str()}")
                         answer = input()
                         if answer in matchup.team1.get_conference_team_aliases():
-                            predictions["round_3"][conference].append(matchup.team1.team_id)
+                            predictions["round_3"][conference.name].append(matchup.team1.team_id)
                             input_accepted = True
                         elif answer in matchup.team2.get_conference_team_aliases():
-                            predictions["round_3"][conference].append(matchup.team2.team_id)
+                            predictions["round_3"][conference.name].append(matchup.team2.team_id)
                             input_accepted = True
                         else:
                             output("Having trouble? Try just typing the school name.")
