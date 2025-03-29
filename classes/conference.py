@@ -24,6 +24,16 @@ class Conference:
         print(f"=== {self.name} ===")
         for conference_team in self.teams:
             print(f"{conference_team}")
+    
+    def get_team(self, team_id):
+        if team_id < 1:
+            return None
+        if team_id > 64:
+            return None
+        for team in self.teams:
+            if team.team_id == team_id:
+                return team
+        return None
 
     def initialize_teams(self):
         # Create all teams at once, so that school locations don't get re-used.

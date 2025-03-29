@@ -6,6 +6,13 @@ class Bracket:
     def __init__(self):
         self.conferences = self.initialize_conferences()
         self.matchup_tree = []
+    
+    def get_conference(self, conference_name):
+        for conference in self.conferences:
+            if conference.name == conference_name:
+                return conference
+        return None
+        
 
     def initialize_conferences(self):
         conferences = []
