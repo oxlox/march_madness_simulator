@@ -87,6 +87,7 @@ class User:
                         else:
                             output("Having trouble? Try just typing the school name.")
 
+#todo: fix the next 3 rounds to show user-selected winners, not the actual conference winners
             output("ELITE 8")
             round_4_matchups = bracket.get_round_4_matchups()
             for matchup in round_4_matchups:
