@@ -62,17 +62,56 @@ class Conference:
 
         return teams_in_conference
 
+    def sort_bracket(self):
+        sorted_teams = [None] * 16
+        for i in range(0, len(self.teams)):
+            if i == 0:
+                sorted_teams[0] = self.teams[i]
+            elif i == 1:
+                sorted_teams[15] = self.teams[i]
+            elif i == 2:
+                sorted_teams[8] = self.teams[i]
+            elif i == 3:
+                sorted_teams[6] = self.teams[i]
+            elif i == 4:
+                sorted_teams[4] = self.teams[i]
+            elif i == 5:
+                sorted_teams[10] = self.teams[i]
+            elif i == 6:
+                sorted_teams[12] = self.teams[i]
+            elif i == 7:
+                sorted_teams[2] = self.teams[i]
+            elif i == 8:
+                sorted_teams[13] = self.teams[i]
+            elif i == 9:
+                sorted_teams[3] = self.teams[i]
+            elif i == 10:
+                sorted_teams[11] = self.teams[i]
+            elif i == 11:
+                sorted_teams[5] = self.teams[i]
+            elif i == 12:
+                sorted_teams[7] = self.teams[i]
+            elif i == 13:
+                sorted_teams[9] = self.teams[i]
+            elif i == 14:
+                sorted_teams[14] = self.teams[i]
+            else:
+                sorted_teams[1] = self.teams[i]
+        return sorted_teams
+
+
     def build_conference_tree(self):
+        self.teams = self.sort_bracket()
         # first, create the first round matchups
-        for i in range(0, floor(len(self.teams) / 2)):
-            new_matchup = Matchup(self.teams[i], self.teams[len(self.teams) - (i + 1)])
+        for i in range(0, 16, 2):
+            new_matchup = Matchup(self.teams[i], self.teams[i + 1])
             new_matchup.simulate_game()
             self.matchup_tree.append(new_matchup)
 
         for i in range(0, 8, 2):
             new_matchup = Matchup(
                 self.matchup_tree[i].winner,
-                self.matchup_tree[len(self.matchup_tree) - (i + 1)].winner,
+                self.matchup_tree[i + 1].winner,
             )
             new_matchup.simulate_game()
             self.matchup_tree.append(new_matchup)
@@ -80,7 +119,7 @@ class Conference:
         for i in range(8, len(self.matchup_tree) - 1, 2):
             new_matchup = Matchup(
                 self.matchup_tree[i].winner,
-                self.matchup_tree[len(self.matchup_tree) - (i + 1)].winner,
+                self.matchup_tree[i + 1].winner,
             )
             new_matchup.simulate_game()
             self.matchup_tree.append(new_matchup)
